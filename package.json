@@ -1,15 +1,25 @@
 {
-  "name": "electron-vue",
+  "name": "Vue-Alarm",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "electron:build": "vue-cli-service electron:build",
+    "electron:serve": "vue-cli-service electron:serve",
+    "postinstall": "electron-builder install-app-deps",
+    "postuninstall": "electron-builder install-app-deps",
+    "rebuild": "electron-rebuild -f -w sqlite3 -p"
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "electron-rebuild": "^1.8.6",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-vue": "^0.8.1",
+    "sqlite3": "^4.1.0",
     "vue": "^2.6.10",
+    "vue-imask": "^5.2.0",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1"
   },
@@ -18,8 +28,11 @@
     "@vue/cli-plugin-eslint": "^3.10.0",
     "@vue/cli-service": "^3.10.0",
     "babel-eslint": "^10.0.1",
+    "electron": "^6.0.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "vue-cli-plugin-electron-builder": "^1.4.0",
     "vue-template-compiler": "^2.6.10"
-  }
+  },
+  "main": "background.js"
 }
